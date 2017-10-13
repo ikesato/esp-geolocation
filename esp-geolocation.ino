@@ -1,4 +1,8 @@
-#include <ESP8266WiFi.h>
+#if defined(ESP8266)
+  #include <ESP8266WiFi.h>
+#elif (defined(ESP32))
+  #include <WiFiClientSecure.h>
+#endif
 #include <ArduinoJson.h>
 
 const char *ssid = <YOUR SSID>;
